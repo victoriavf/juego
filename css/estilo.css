@@ -1,0 +1,121 @@
+.body {
+  background-color: rgba(35, 22, 109, 0.346);
+}
+
+h1 {
+  text-align: center;
+  background: white;
+  margin: 1em;
+  color: rgb(134, 3, 14);
+}
+
+h2 {
+  text-align: center;
+  background: white;
+  margin: 0.5em;
+  color: rgb(134, 3, 14);
+}
+
+main {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1000px;
+  margin: auto;
+}
+
+figure,
+figure img {
+  display: inline-block;
+  width: 100%;
+}
+
+figure {
+  position: relative;
+  transition: all ease 0.5s;
+  transform-style: preserve-3d;
+  transform: perspective(700px) rotateY(0deg);
+  cursor: pointer;
+  box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.6);
+}
+
+figure::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s all ease;
+}
+
+figure:hover:after {
+  background: rgba(255, 255, 255, 0.137);
+}
+
+figure.opened {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+figure .back {
+  display: block;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          width: 100%;
+
+}
+
+figure .searched-image {
+  position: absolute;
+  top: 0;
+  transform: perspective(600px) rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+}/*# sourceMappingURL=estilo.css.map */
+.centered-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
+}
+.btn {
+  position: relative;
+  display: block;
+  height: 77px;
+  width: 300px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #110f0f;
+  font-size: 18px;
+  overflow: hidden;
+  transition: all 500ms ease;
+  border: 2px solid #20e2d7;
+  margin-bottom: 40px;
+  z-index: 0;
+  font-weight: 700;
+  cursor: pointer;
+
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background-color: #20e2d7;
+  transition: all 500ms ease;
+  z-index: -1;
+}
+.btn--2:hover {
+  background-color: #20e2d7;
+  box-shadow: 0 0 10px #20e2d7, 0 0 20px #20e2d7, 0 0 20px #20e2d7;
+  color: #434343;
+}
